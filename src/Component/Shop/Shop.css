@@ -12,37 +12,3 @@
     padding-right: 80px;
 }
 
-.cart {
-    background: #ffe1b3;
-    margin: 0px;
-}
-
-.cart-text {
-    color: #2A414F;
-}
-
-.cart-style {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 38px;
-}
-
-.cart-style p {
-    margin: 0px;
-    padding: 3px;
-    color: #2A414F;
-}
-
-.cart-btn button {
-    color: white;
-    width: 80%;
-    margin: 10px;
-}
-
-.clear-cart {
-    background: #FF3030;
-}
-.review-cart{
-    background: #FF9900;
-}
