@@ -22,7 +22,7 @@ const Cart = ({ cart }) => {
                 <p>Selected Items :${cart.length}</p>
                 <p>Total Price :${totalPrice}</p>
                 <p>Total Shipping Charge:${totalshipping}</p>
-                <p>Tax:${tax.toFixed}</p>
+                <p>Tax:${tax.toFixed(2)}</p>
                 <h3>Grand Total:${grandTotal.toFixed(2)}</h3>
             </div>
             <div className="cart-btn">
