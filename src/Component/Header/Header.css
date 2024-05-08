@@ -10,4 +10,8 @@
     display: flex;
     list-style-type: none;
     gap: 20px;
+
+}
+span{
+    color: white;
 }
