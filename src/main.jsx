@@ -4,19 +4,22 @@ import Root from './Component/Root/Root';
 import Shop from './Component/Shop/Shop';
 import './index.css'
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
 import Orders from './Component/Orders/Orders';
 // import Review from './Component/Review/Review';
 import Login from './Component/Login/Login';
 import Manage from './Component/Manage/Manage';
+import cartProductsLoader from './cartProductsLoaders';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/react-ecommerce-website/",
     element: <Root></Root>,
     children: [
       {
@@ -25,7 +28,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/react-ecommerce-website/order',
-        element: <Orders></Orders>
+        element: <Orders></Orders>,
+        loader: cartProductsLoader
+
       },
       {
         path: '/react-ecommerce-website/manage',

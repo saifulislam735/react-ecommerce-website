@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import './Shop.css'
 import Cart from "../Cart/Cart";
-import { addToDb, getShoppingCart } from "../../utilities/fakedb";
+import { addToDb, deleteShoppingCart, getShoppingCart } from "../../utilities/fakedb";
 
 
 const Shop = () => {
@@ -15,6 +15,8 @@ const Shop = () => {
             .then(data => setproducts(data))
 
     }, [])
+
+
 
     useEffect(() => {
         const storedCart = getShoppingCart();
@@ -29,7 +31,7 @@ const Shop = () => {
                 addedProduct.quantity = quantity;
                 //Step4: add the added product to save cart
                 saveCart.push(addedProduct)
-                console.log(addedProduct)
+                // console.log(addedProduct)
             }
         }
         setCart(saveCart)
@@ -44,7 +46,7 @@ const Shop = () => {
         //if exist then update quantity by one
         let newCart = [];
         const exist = cart.find(pd => pd.id === product.id);
-        console.log(exist, product, cart)
+        // console.log(exist, product, cart)
         if (!exist) {
             product.quantity = 1;
             newCart = [...cart, product];
@@ -54,12 +56,17 @@ const Shop = () => {
             const remaining = cart.filter(pd => pd.id !== product.id)
             newCart = [...remaining, exist]
         }
-        
+
         setCart(newCart);
         addToDb(product.id)
         // console.log(newCart);
     }
 
+    //for clearing cart
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
     return (
 
         <div className="grid-cart" >
@@ -69,7 +76,7 @@ const Shop = () => {
                 }
             </div>
             <div>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}> </Cart>
             </div>
         </div >
     );
