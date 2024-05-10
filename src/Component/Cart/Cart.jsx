@@ -1,10 +1,9 @@
 // import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
-import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 import './Cart.css'
-const Cart = ({ cart, handleClearCart }) => {
+const Cart = ({ cart, handleClearCart,children }) => {
 
     let totalPrice = 0;
     let totalshipping = 0;
@@ -31,7 +30,7 @@ const Cart = ({ cart, handleClearCart }) => {
             </div>
             <div className="cart-btn">
                 <button onClick={handleClearCart} className="clear-cart btn">Clear cart <FontAwesomeIcon icon={faDeleteLeft} /></button>
-                <button className="review-cart btn">Review Order <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
+                {children}
             </div>
         </div>
     );

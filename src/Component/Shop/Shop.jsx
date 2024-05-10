@@ -5,6 +5,9 @@ import Product from "../Product/Product";
 import './Shop.css'
 import Cart from "../Cart/Cart";
 import { addToDb, deleteShoppingCart, getShoppingCart } from "../../utilities/fakedb";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 
 const Shop = () => {
@@ -76,7 +79,11 @@ const Shop = () => {
                 }
             </div>
             <div>
-                <Cart cart={cart} handleClearCart={handleClearCart}> </Cart>
+                <Cart cart={cart} handleClearCart={handleClearCart}>
+                    <Link to={'/react-ecommerce-website/order'} >
+                        <button className="review-cart btn">Review Order <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
+                    </Link>
+                </Cart>
             </div>
         </div >
     );

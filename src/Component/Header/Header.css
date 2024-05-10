@@ -1,17 +1,23 @@
-.header{
+.header {
     display: flex;
     background: #1C2B35;
     align-items: center;
     justify-content: space-between;
     padding: 0px 100px;
     color: white;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
-.listing{
+
+.listing {
     display: flex;
     list-style-type: none;
     gap: 20px;
 
 }
-span{
+
+span {
     color: white;
 }

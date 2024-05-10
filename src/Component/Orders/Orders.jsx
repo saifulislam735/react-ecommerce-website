@@ -1,9 +1,12 @@
 
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import { useState } from 'react';
 import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const Order = () => {
     const savedCart = useLoaderData()
@@ -20,7 +23,7 @@ const Order = () => {
         setCart([]);
         deleteShoppingCart();
     }
-    
+
     return (
         <div className='grid-cart'>
             <div>
@@ -31,7 +34,11 @@ const Order = () => {
             <div className="cart">
                 <Cart cart={cart}
                     handleClearCart={handleClearCart}
-                ></Cart>
+                >
+                    <Link to={'/react-ecommerce-website/checkout'}>
+                        <button className="review-cart btn">Proceed Checkout <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
+                    </Link>
+                </Cart>
             </div>
         </div>
     );

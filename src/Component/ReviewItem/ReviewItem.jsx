@@ -11,7 +11,14 @@ const ReviewItem = ({ products, handleRemoveItems }) => {
                 <div className='reviewProductLevel'>
                     <p className="reviewProductHead">{products.name}</p>
                     <p>Price:<span style={{ color: "#F90" }}>${products.price}</span></p>
-                    <p>Shipping Charge:<span style={{ color: "#F90" }}>${products.shipping}</span></p>
+                    <div style={{ display: 'flex' }}>
+                        <p>
+                            Shipping Charge:<span style={{ color: "#F90" }}>${products.shipping}</span>
+                        </p>
+                        <p style={{ paddingLeft: "20px" }}>
+                            Quantity:<span style={{ color: "#F90" }}>{products.quantity}</span>pcs
+                        </p>
+                    </div>
                 </div>
                 <div onClick={() => handleRemoveItems(products.id)} className='deletebtn' >
                     <FontAwesomeIcon style={{ width: "20px", height: "20px", color: "#EB5757" }} icon={faTrash} />

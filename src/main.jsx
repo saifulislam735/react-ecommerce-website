@@ -14,6 +14,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import CheckOut from './Component/Cart/CheckOut/CheckOut';
+import Error from './Component/Error/Error';
 
 
 
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
         path: '/react-ecommerce-website/login',
         element: <Login></Login>
 
+      },
+      {
+        path: '/react-ecommerce-website/checkout',
+        element: <CheckOut></CheckOut>
+      },
+      {
+        path: '*',
+        element: <Error></Error>
       }
 
     ],
