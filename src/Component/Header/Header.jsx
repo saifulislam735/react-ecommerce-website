@@ -15,17 +15,19 @@ const Header = () => {
                 <Link to={'/react-ecommerce-website/manage'}><span>Manage Inventory</span></Link>
                 <Link to={'/react-ecommerce-website/login'}><span>Login</span></Link>
                 <Link to={'/react-ecommerce-website/signup'}><span>SignUp</span></Link>
-                <div style={{ background: 'gray', padding: '4px', borderRadius: '2px' }}>
+          
                     {user ?
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                            <Link to={'/react-ecommerce-website/'}><span>{user.email}</span></Link>
-                            <button onClick={logOut}>SignOut</button>
+                        <div style={{ background: 'gray', padding: '4px', borderRadius: '2px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                                <Link to={'/react-ecommerce-website/'}><span>{user.email}</span></Link>
+                                <button onClick={logOut}>SignOut</button>
+                            </div>
                         </div>
 
                         :
                         ""
                     }
-                </div>
+              
             </ul>
         </div>
     );
