@@ -11,6 +11,7 @@ const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [showError, setShowError] = useState('');
+    const [showSuccess, setShowSuccess] = useState('');
 
     const { createUser } = useContext(AuthContex)
     const handleSignUp = (event) => {
@@ -24,7 +25,8 @@ const SignUp = () => {
         const confirm_password = form.confirm_password.value;
         // const name = form.name.value;
         console.log(form, email, password, confirm_password)
-
+        setShowError('');
+        setShowSuccess('');
         //validation
         if (!/(?=.*[a-z])/.test(password)) {
             setShowError('at least one small letter [a-z]');
@@ -59,11 +61,17 @@ const SignUp = () => {
             .then((result) => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+                setShowSuccess('Account created successfully!')
                 toast.success('Account created successfully!')
+                setTimeout(() => setShowSuccess(''), 3000)
+                form.reset()
             })
             .catch((error) => {
                 const errorMessage = error.message;
+                setShowError(errorMessage)
                 console.log(errorMessage)
+                setTimeout(() => setShowError(''), 3000)
+
             });
 
     }
@@ -123,6 +131,9 @@ const SignUp = () => {
                 </form>
                 <span style={{ color: 'red', opacity: '0.7', textAlign: "start" }}>
                     {showError}
+                </span>
+                <span style={{ color: 'green', opacity: '0.7', textAlign: "start" }}>
+                    {showSuccess}
                 </span>
             </div>
         </div>
