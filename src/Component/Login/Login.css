@@ -1,0 +1,145 @@
+/* login.css */
+.login-container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 0px 20px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    border-radius: 8px;
+    border: 1px solid #95A0A7;
+    background: #FFF;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 0px;
+
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.login-form label {
+    margin-bottom: 10px;
+}
+
+.login-form input {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #0E161A;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: rgba(255, 153, 0, 0.30);
+    color: #0E161A;
+    font-size: 16px;
+
+
+
+}
+
+.login-button:hover {
+    background-color: #e2b33d;
+}
+
+.login-form p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-form p a {
+    color: #0073bb;
+    text-decoration: none;
+}
+
+.login-form p a:hover {
+    text-decoration: underline;
+}
+
+.or-separator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.or-separator span {
+    color: black;
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+}
+
+.or-separator span:before,
+.or-separator span:after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    top: 50%;
+    width: 40%;
+}
+
+.or-separator span:before {
+    left: 0;
+}
+
+.or-separator span:after {
+    right: 0;
+}
+
+.google-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.google-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.google-button:hover {
+    background-color: #357ae8;
+}
+
+.input-icon-container {
+    position: relative;
+}
+
+.input-icon-container input {
+    width: calc(100% - 15px);
+    /* Adjusted width for the icon */
+}
+
+.input-icon-container .password-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-80%);
+    cursor: pointer;
+    color: #95A0A7;
+    /* Icon color */
+}

@@ -16,6 +16,8 @@ import {
 } from "react-router-dom";
 import CheckOut from './Component/Cart/CheckOut/CheckOut';
 import Error from './Component/Error/Error';
+import SignUp from './Component/SignUp/SignUp';
+import AuthProvider from './Component/Provider/AuthProvider';
 
 
 
@@ -36,21 +38,26 @@ const router = createBrowserRouter([
       },
       {
         path: '/react-ecommerce-website/manage',
-        element: <Manage></Manage>
+        element: <Manage></Manage>,
 
       },
       {
         path: '/react-ecommerce-website/login',
-        element: <Login></Login>
+        element: <Login></Login>,
+
+      },
+      {
+        path: '/react-ecommerce-website/signup',
+        element: <SignUp></SignUp>,
 
       },
       {
         path: '/react-ecommerce-website/checkout',
-        element: <CheckOut></CheckOut>
+        element: <CheckOut></CheckOut>,
       },
       {
         path: '*',
-        element: <Error></Error>
+        element: <Error></Error>,
       }
 
     ],
@@ -60,6 +67,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
