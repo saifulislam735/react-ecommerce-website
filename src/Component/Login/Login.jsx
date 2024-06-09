@@ -1,6 +1,6 @@
 import './Login.css'; // Import the CSS file
 import logo from '../../images/Logo-google-icon-PNG.png'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -15,6 +15,14 @@ const Login = () => {
 
     //usecontext for signIn
     const { signIn, user, logOut } = useContext(AuthContex)
+
+    //to neviagte
+    const nevigate = useNavigate()
+
+    //to get location of redirecting page /from page
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/react-ecommerce-website/";
+
 
     const handleLogin = (event) => {
         //prevent reload
@@ -34,6 +42,10 @@ const Login = () => {
                 toast.success('Login Successful!')
                 setTimeout(() => setShowSuccess(''), 3000)
                 form.reset()
+                
+                //afterLogin nevigate to home page or from page(where we intend to go)
+                nevigate(from, { replace: true })
+
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -51,8 +63,8 @@ const Login = () => {
                 <div>
                     <p><h2>Already Login in </h2><span style={{ color: '#F90' }}>{user.email}</span></p>
 
-                    <p>for log in another account, please logout from this account first</p>
-                    <button onClick={logOut}>LogOut</button>
+                    <p>for log in another account, please SignOut from this account first</p>
+                    <button onClick={logOut}>SignOut</button>
                 </div>
 
                 :

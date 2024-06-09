@@ -18,6 +18,7 @@ import CheckOut from './Component/Cart/CheckOut/CheckOut';
 import Error from './Component/Error/Error';
 import SignUp from './Component/SignUp/SignUp';
 import AuthProvider from './Component/Provider/AuthProvider';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/react-ecommerce-website/order',
-        element: <Orders></Orders>,
+        element: <PrivateRoute><Orders></Orders></PrivateRoute>,
         loader: cartProductsLoader
 
       },
