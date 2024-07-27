@@ -12,3 +12,40 @@
     padding-right: 80px;
 }
 
+/* pagination.css */
+
+.pagination-container {
+    justify-content: center;
+    display: flex;
+    gap: 0.5rem;
+    /* Tailwind gap-2 equivalent */
+    margin-top: 1rem;
+    /* Tailwind mt-4 equivalent */
+}
+
+.pagination-button {
+    padding: 0.25rem 0.75rem;
+    /* Tailwind px-3 py-1 equivalent */
+    border: 1px solid #000;
+    border-radius: 0.25rem;
+    /* Tailwind rounded equivalent */
+    background-color: white;
+    color: #007bff;
+    /* Tailwind text-blue-500 equivalent */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover {
+    background-color: #007bff;
+    /* Tailwind hover:bg-blue-500 equivalent */
+    color: white;
+    /* Tailwind hover:text-white equivalent */
+}
+
+.pagination-button-active {
+    background-color: #007bff;
+    /* Tailwind bg-blue-500 equivalent */
+    color: white;
+    /* Tailwind text-white equivalent */
+}

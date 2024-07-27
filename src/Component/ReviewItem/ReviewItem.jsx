@@ -20,7 +20,7 @@ const ReviewItem = ({ products, handleRemoveItems }) => {
                         </p>
                     </div>
                 </div>
-                <div onClick={() => handleRemoveItems(products.id)} className='deletebtn' >
+                <div onClick={() => handleRemoveItems(products._id)} className='deletebtn' >
                     <FontAwesomeIcon style={{ width: "20px", height: "20px", color: "#EB5757" }} icon={faTrash} />
                 </div>
             </div>

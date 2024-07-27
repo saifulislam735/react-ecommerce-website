@@ -30,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/react-ecommerce-website/",
         element: <Shop></Shop>,
+        loader: () => fetch('http://localhost:3000/totalproducts')
       },
       {
         path: '/react-ecommerce-website/order',
